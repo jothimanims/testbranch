@@ -7,7 +7,7 @@ spring:
         name: auth
     datasource:
         dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
-        url: jdbc:mysql://${DB_URL:localhost}:${DB_PORT:3306}/${DB_NAME:dataxshiro}
+        url: jdbc:mysql://${DB_URL:localhost}:${DB_PORT:3306}/${DB_NAME:shiro}
         databaseName:
         serverName:
         username: ${DB_USERNAME:root}
