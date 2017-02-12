@@ -1,4 +1,4 @@
-package com.ffss.datax.shiro.controller
+package com.test.security.controller
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
@@ -26,8 +26,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ffss.datax.shiro.config.MySqlDbRealarm;
-import com.ffss.datax.shiro.service.BaseService;
+import com.test.security.config.MySqlDbRealarm;
+import com.test.security.service.BaseService;
 
 @Controller
 class BaseController {
