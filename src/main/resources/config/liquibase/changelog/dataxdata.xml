@@ -11,7 +11,7 @@
 
 	<!-- user account -->
 
-	<changeSet id="201611241316-1" author="virtusa"> <!-- start with 1001 -->
+	<changeSet id="201611241316-1" author="test"> <!-- start with 1001 -->
 		<insert tableName="user_account">
 		    <column name="USER_ACCOUNT_PK" valueNumeric="1"/>
 			<column name="USER_NAME" value="johnw"></column>
@@ -36,7 +36,7 @@
 		</insert>
 	</changeSet>
 
-	<changeSet id="201611241316-2" author="virtusa"> <!-- start with 1001 -->
+	<changeSet id="201611241316-2" author="test"> <!-- start with 1001 -->
 		<insert tableName="ROLE">
 		<column name="role_id" valueNumeric="1"/>
 			<column name="ROLE_NAME" value="admin"></column>

@@ -1,4 +1,4 @@
-package com.ffss.datax.shiro.config
+package com.test.security.config
 
 import javax.servlet.Filter
 import javax.sql.DataSource;
@@ -28,7 +28,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.web.servlet.handler.UserRoleAuthorizationInterceptor;
 
-import com.ffss.datax.shiro.repository.UserAccountRepository;
+import com.test.security.repository.UserAccountRepository;
 
 
 @Configuration
