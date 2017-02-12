@@ -1,4 +1,4 @@
-package com.ffss.datax.shiro.config
+package com.test.security.config
 
 import javax.sql.DataSource
 
