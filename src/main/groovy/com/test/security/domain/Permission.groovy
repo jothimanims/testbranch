@@ -1,4 +1,4 @@
-package com.ffss.datax.shiro.domain;
+package com.test.security.domain;
 
 import javax.persistence.Column
 import javax.persistence.Entity
