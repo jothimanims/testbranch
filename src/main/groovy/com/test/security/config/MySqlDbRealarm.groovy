@@ -22,10 +22,10 @@ import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.ffss.datax.shiro.domain.Role
-import com.ffss.datax.shiro.domain.UserAccount;
-import com.ffss.datax.shiro.repository.UserAccountRepository;
-import com.ffss.datax.shiro.domain.Permission;
+import com.test.security.domain.Role
+import com.test.security.domain.UserAccount;
+import com.test.security.repository.UserAccountRepository;
+import com.test.security.domain.Permission;
 
 /**
  * Authenticated & Authorization information will be fetched from the database.
