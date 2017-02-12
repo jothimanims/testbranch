@@ -1,4 +1,4 @@
-package com.ffss.datax.shiro.config
+package com.test.security.config
 
 import javax.servlet.Filter
 import javax.sql.DataSource;
