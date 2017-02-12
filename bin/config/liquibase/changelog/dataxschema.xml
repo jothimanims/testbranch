@@ -1,0 +1,96 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+   
+   
+    <changeSet author="Virtusa" id="1481971618877-20">
+        <createTable tableName="user_account">
+            <column autoIncrement="true" name="USER_ACCOUNT_PK" type="BIGINT" startWith="1001">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="USER_NAME" type="VARCHAR(75)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FIRST_NAME" type="VARCHAR(50)"/>
+            <column name="MIDDLE_NAME" type="VARCHAR(50)"/>
+            <column name="LAST_NAME" type="VARCHAR(50)"/>
+            <column name="PASSWORD_HASH" type="VARCHAR(255)"/>
+            <column name="EMAIL_ADDRESS" type="VARCHAR(100)"/>
+            <column name="CREATED_BY" type="BIGINT"/>
+            <column name="UPDATED_BY" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Virtusa" id="1481971618877-22">
+        <createTable tableName="user_account_role">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="USER_ACCOUNT_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="USER_ROLE_ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="BIGINT"/>
+            <column name="CREATED_DATE_TIME" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UPDATED_BY" type="BIGINT"/>
+            <column name="UPDATED_DATE_TIME" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Virtusa" id="1481971618877-24">
+        <createTable tableName="ROLE">
+            <column autoIncrement="true" name="ROLE_ID" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="ROLE_NAME" type="VARCHAR(64)"/>
+            <column name="DESCRIPTION" type="VARCHAR(250)"/>
+            <column name="IS_ACTIVE" type="VARCHAR(1)"/>
+            <column name="CREATED_BY" type="BIGINT"/>
+            
+            <column name="UPDATED_BY" type="BIGINT"/>
+            
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="Virtusa" id="1481971618877-25">
+        <createTable tableName="PERMISSION">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="permission_name" type="VARCHAR(64)"/>
+            <column name="url" type="VARCHAR(250)"/>
+            <column name="CREATED_BY" type="BIGINT"/>
+            <column name="UPDATED_BY" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    
+    <changeSet author="Virtusa" id="1481971618877-26">
+        <createTable tableName="ROLE_PERMISSION">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="role_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="permission_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="BIGINT"/>
+            <column name="UPDATED_BY" type="BIGINT"/>
+        </createTable>
+        
+    </changeSet>
+    
+           
+    <changeSet author="virtusa" id="1481971618877-104">
+        <addForeignKeyConstraint baseColumnNames="USER_ACCOUNT_ID" baseTableName="user_account_role" constraintName="fk_user_account" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="USER_ACCOUNT_PK" referencedTableName="user_account"/>
+        <addForeignKeyConstraint baseColumnNames="USER_ROLE_ID" baseTableName="user_account_role" constraintName="fk_role" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="role_id" referencedTableName="role"/>
+        
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="ROLE_PERMISSION" constraintName="fk_permission_role_id" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="role_id" referencedTableName="role"/>
+        <addForeignKeyConstraint baseColumnNames="permission_id" baseTableName="ROLE_PERMISSION" constraintName="fk_ROLE_PERMISSION_id" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="PERMISSION"/>
+    </changeSet>
+</databaseChangeLog>
