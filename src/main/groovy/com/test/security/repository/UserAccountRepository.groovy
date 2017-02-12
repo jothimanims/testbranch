@@ -1,6 +1,6 @@
-package com.ffss.datax.shiro.repository
+package com.test.security.repository
 
-import com.ffss.datax.shiro.domain.UserAccount
+import com.test.security.domain.UserAccount
 
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query;
